@@ -1,0 +1,17 @@
+import com.stackleader.brms.training.model.Customer;
+
+global org.slf4j.Logger LOG;
+
+rule "contains string"
+when
+    Customer(firstName contains "J")
+then
+    LOG.info("Customer's first name contains J");
+end
+
+rule "contains element in list"
+when
+    Customer(currentProducts contains "TRAVEL")
+then
+    LOG.info("Customer has TRAVEL as a product already");
+end

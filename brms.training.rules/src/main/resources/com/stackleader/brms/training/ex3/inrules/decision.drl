@@ -1,0 +1,12 @@
+import com.stackleader.brms.training.model.CreditCardApplication;
+
+global org.slf4j.Logger LOG;
+global com.stackleader.brms.training.model.Decision decision;
+
+rule "approved"
+agenda-group "approved"
+when
+    eval(true)
+then
+    decision.setApproved(true);
+end

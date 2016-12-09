@@ -1,0 +1,12 @@
+import com.stackleader.brms.training.model.CreditCardApplication;
+
+import function com.google.common.base.Strings.isNullOrEmpty;
+
+global org.slf4j.Logger LOG;
+
+rule "null check"
+when
+    CreditCardApplication(isNullOrEmpty(productCode))
+then
+    LOG.info("productCode is null");
+end

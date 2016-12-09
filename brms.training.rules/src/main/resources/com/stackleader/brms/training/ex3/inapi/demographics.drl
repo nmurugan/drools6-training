@@ -1,0 +1,39 @@
+import com.stackleader.brms.training.model.Customer;
+import com.stackleader.brms.training.model.Customer.Employment;
+
+global org.slf4j.Logger LOG;
+
+declare IsStudent
+end
+
+declare IsOverAgeMajority
+end
+
+declare DemographicsAreComplete
+end
+
+rule "Is student"
+agenda-group "demographics"
+when
+    Customer(employment == Employment.STUDENT)
+then
+    insert(new IsStudent());
+end
+
+rule "customer is over age of majority"
+agenda-group "demographics"
+when
+    Customer(age >= 18)
+then
+    insert(new IsOverAgeMajority());
+end
+
+rule "demomgraphics complete"
+agenda-group "demographics"
+when
+    IsOverAgeMajority()
+then
+    insert(new DemographicsAreComplete());
+end
+    
+    

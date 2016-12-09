@@ -1,0 +1,35 @@
+import com.stackleader.brms.training.model.CreditCardApplication;
+
+global org.slf4j.Logger LOG;
+
+declare IsValidSelectedProduct
+end
+
+declare ProductIsComplete
+end
+
+rule "Student allowed products"
+agenda-group "product"
+when
+    IsStudent()
+    CreditCardApplication(productCode memberOf ["TRAVEL"])
+then
+    insert(new IsValidSelectedProduct());
+end
+
+rule "Standard allowed products"
+agenda-group "product"
+when
+    not IsStudent()
+    CreditCardApplication(productCode memberOf ["TRAVEL", "REWARDS"])
+then
+    insert(new IsValidSelectedProduct());
+end
+
+rule "product complete"
+agenda-group "product"
+when
+    IsValidSelectedProduct()
+then
+    insert(new ProductIsComplete());
+end

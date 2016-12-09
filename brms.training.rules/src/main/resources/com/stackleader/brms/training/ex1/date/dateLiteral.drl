@@ -1,0 +1,17 @@
+import com.stackleader.brms.training.model.Customer;
+
+global org.slf4j.Logger LOG;
+
+rule "date literal"
+when
+    Customer(sinceDate > "27-Oct-2000")
+then
+    LOG.info("Customer since date is greater than date literal");
+end
+
+rule "date literal again"
+when
+    Customer(sinceDate > "27-Oct-3000")
+then
+    LOG.info("Rule never fires");
+end

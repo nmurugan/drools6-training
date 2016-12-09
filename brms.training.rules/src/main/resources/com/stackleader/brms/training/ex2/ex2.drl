@@ -1,0 +1,23 @@
+import com.stackleader.brms.training.model.Customer;
+import com.stackleader.brms.training.model.ValidationMessage;
+
+global org.slf4j.Logger LOG;
+global java.lang.String transactionKey;
+global java.util.List validationExceptions;
+
+declare IsOverAgeMajority
+end
+
+rule "customer is over age of majority"
+when
+    Customer(age >= 18)
+then
+    insert(new IsOverAgeMajority());
+end
+
+rule "not IsCustomerAgeMajority"
+when
+    not IsOverAgeMajority()
+then
+    validationExceptions.add(new ValidationMessage("123","123"));
+end

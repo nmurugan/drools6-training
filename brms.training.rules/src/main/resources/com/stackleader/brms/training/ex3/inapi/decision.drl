@@ -1,0 +1,14 @@
+import com.stackleader.brms.training.model.CreditCardApplication;
+
+global org.slf4j.Logger LOG;
+global java.lang.String transactionKey;
+global com.stackleader.brms.training.model.Decision decision;
+
+rule "approved"
+agenda-group "decision"
+when
+    DemographicsAreComplete()
+    ProductIsComplete()
+then
+    decision.setApproved(true);
+end

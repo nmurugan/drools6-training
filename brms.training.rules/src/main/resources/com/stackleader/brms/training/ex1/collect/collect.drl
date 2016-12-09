@@ -1,0 +1,12 @@
+import com.stackleader.brms.training.model.Borrower;
+import com.stackleader.brms.training.model.Customer;
+import java.util.List;
+
+global org.slf4j.Logger LOG;
+
+rule "collect"
+when
+    $b: List(size > 1) from collect(Borrower())
+then
+    LOG.info("Number of borrowers: {}", $b.size());
+end

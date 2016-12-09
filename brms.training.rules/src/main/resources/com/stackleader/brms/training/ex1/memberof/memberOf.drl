@@ -1,0 +1,10 @@
+import com.stackleader.brms.training.model.CreditCardApplication;
+
+global org.slf4j.Logger LOG;
+
+rule "memberOf"
+when
+    CreditCardApplication(productCode memberOf ["TRAVEL", "REWARDS"])
+then
+    LOG.info("Credit card application is for a valid product");
+end

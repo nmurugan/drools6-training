@@ -1,0 +1,10 @@
+import com.stackleader.brms.training.model.Customer;
+
+global org.slf4j.Logger LOG;
+
+rule "matches"
+when
+    Customer(sin matches "^[1-9][0-9]{8}$")
+then
+    LOG.info("Customer sin matches custom regex");
+end

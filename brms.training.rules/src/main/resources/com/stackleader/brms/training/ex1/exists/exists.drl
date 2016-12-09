@@ -1,0 +1,20 @@
+import com.stackleader.brms.training.model.Customer;
+
+global org.slf4j.Logger LOG;
+/**
+ *
+ * @author john.eckstein
+ */
+rule "Exists test"
+when
+    exists Customer()
+then
+    LOG.info("At least one customer exists");
+end
+
+rule "Match on each customer"
+when
+    Customer()
+then
+    LOG.info("This will match per occurance");
+end

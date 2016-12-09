@@ -1,0 +1,14 @@
+import com.stackleader.brms.training.model.Borrower;
+import com.stackleader.brms.training.model.Customer;
+
+global org.slf4j.Logger LOG;
+
+rule "forall"
+when
+    forall(
+        $b: Borrower()
+        Customer(customer == true) from $b.getCustomer()
+        )
+then
+    LOG.info("All borrowers are customers");
+end

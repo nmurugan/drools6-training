@@ -1,0 +1,18 @@
+
+global org.slf4j.Logger LOG;
+global java.lang.String transactionKey;
+
+rule "Setup"
+    when
+        eval(true)
+    then
+        kcontext.getKnowledgeRuntime().getAgenda().getAgendaGroup("demographics").setFocus();
+end
+
+rule "Create validation exceptions"
+    salience -100
+    when
+        eval(true)
+    then
+        kcontext.getKnowledgeRuntime().getAgenda().getAgendaGroup("exceptions").setFocus();
+end

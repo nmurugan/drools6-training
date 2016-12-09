@@ -1,0 +1,33 @@
+import com.stackleader.brms.training.model.Customer;
+
+global org.slf4j.Logger LOG;
+
+rule "not customer"
+when
+    not Customer()
+then
+    LOG.info("There are no customers in the drools session");
+end
+
+rule "add a customer"
+when
+    eval(true)
+then
+    insert(new Customer());
+end
+
+rule "not customer again"
+when
+    not Customer()
+then
+    LOG.info("This rule never fires");
+end
+
+rule "a customer exists"
+when
+    Customer()
+then
+    LOG.info("Order is not guaranteed among drools files but later version of "
+        + "drools ~6.3 add implicit ordering with rules in the same file");
+end
+

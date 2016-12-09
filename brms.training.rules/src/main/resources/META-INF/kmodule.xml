@@ -1,0 +1,100 @@
+<kmodule xmlns="http://jboss.org/kie/6.0.0/kmodule">
+
+    <kbase name="existsKbase" 
+            packages="com.stackleader.brms.training.model,
+            com.stackleader.brms.training.ex1.exists" 
+            default="true">
+        <ksession name="existsSession" default="true" />        
+    </kbase>
+    
+    <kbase name="notKbase" 
+            packages="com.stackleader.brms.training.model,
+            com.stackleader.brms.training.ex1.not" 
+            default="true">
+        <ksession name="notSession" default="true" />        
+    </kbase>
+        
+    <kbase name="dateKbase" 
+            packages="com.stackleader.brms.training.model,
+            com.stackleader.brms.training.ex1.date" 
+            default="true">
+        <ksession name="dateSession" default="true" />        
+    </kbase>
+    
+    <kbase name="matchesKbase" 
+            packages="com.stackleader.brms.training.model,
+            com.stackleader.brms.training.ex1.matches" 
+            default="true">
+        <ksession name="matchesSession" default="true" />        
+    </kbase>
+    
+    <kbase name="containsKbase" 
+            packages="com.stackleader.brms.training.model,
+            com.stackleader.brms.training.ex1.contains" 
+            default="true">
+        <ksession name="containsSession" default="true" />        
+    </kbase>
+    
+    <kbase name="memberOfKbase" 
+            packages="com.stackleader.brms.training.model,
+            com.stackleader.brms.training.ex1.memberof" 
+            default="true">
+        <ksession name="memberOfSession" default="true" />        
+    </kbase>
+    
+    <kbase name="fromKbase" 
+            packages="com.stackleader.brms.training.model,
+            com.stackleader.brms.training.ex1.from" 
+            default="true">
+        <ksession name="fromSession" default="true" />        
+    </kbase>
+    
+    <kbase name="collectKbase" 
+            packages="com.stackleader.brms.training.model,
+            com.stackleader.brms.training.ex1.collect" 
+            default="true">
+        <ksession name="collectSession" default="true" />        
+    </kbase>
+    
+    <kbase name="forallKbase" 
+            packages="com.stackleader.brms.training.model,
+            com.stackleader.brms.training.ex1.forall" 
+            default="true">
+        <ksession name="forallSession" default="true" />        
+    </kbase>
+    
+    <kbase name="nullcheckKbase" 
+            packages="com.stackleader.brms.training.model,
+            com.stackleader.brms.training.ex1.nullcheck" 
+            default="true">
+        <ksession name="nullcheckSession" default="true" />        
+    </kbase>
+    
+    <kbase name="ex2Kbase" 
+            packages="com.stackleader.brms.training.model,
+            com.stackleader.brms.training.ex2" 
+            default="true">
+        <ksession name="ex2Session" default="true" />        
+    </kbase>
+    
+    <kbase name="ex3InRulesKbase" 
+            packages="com.stackleader.brms.training.model,
+            com.stackleader.brms.training.ex3.inrules" 
+            default="true">
+        <ksession name="ex3InRulesSession" default="true" />        
+    </kbase>
+    
+    <kbase name="ex3InApiKbase" 
+            packages="com.stackleader.brms.training.model,
+            com.stackleader.brms.training.ex3.inapi" 
+            default="true">
+        <ksession name="ex3InApiSession" default="true" />        
+    </kbase>
+    
+    <kbase name="ex4FullAppKbase" 
+            packages="com.stackleader.brms.training.model,
+            com.stackleader.brms.training.ex4.rules.online.create" 
+            default="true">
+        <ksession name="ex4FullAppSession" default="true" />        
+    </kbase>
+</kmodule>

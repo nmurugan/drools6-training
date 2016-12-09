@@ -1,0 +1,13 @@
+import com.stackleader.brms.training.model.Borrower;
+import com.stackleader.brms.training.model.Customer;
+import com.stackleader.brms.training.model.Borrower.Relationship;
+
+global org.slf4j.Logger LOG;
+
+rule "from"
+when
+    $b: Borrower(relationship == Relationship.APPLICANT)
+    $c: Customer() from $b.getCustomer()
+then
+    LOG.info($c.getFirstName() + " is the applicant");
+end
